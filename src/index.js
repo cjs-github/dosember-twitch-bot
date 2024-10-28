@@ -67,3 +67,23 @@ client.on('message', (channel, tags, message, self) => {
     client.say(channel, 'Information about Dosember: <link to info>');
   }
 });
+
+// Function to join a channel when a user types /dosember
+client.on('message', (channel, tags, message, self) => {
+  if (self) return;
+
+  if (message.trim().toLowerCase() === '/dosember') {
+    client.join(channel).then(() => {
+      client.say(channel, 'Dosember bot has joined the channel!');
+    }).catch(err => {
+      console.error(err);
+    });
+  }
+});
+
+// Function to check for an existing bot to avoid duplication
+client.on('join', (channel, username, self) => {
+  if (self) {
+    client.say(channel, 'Dosember bot is already in the channel.');
+  }
+});
