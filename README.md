@@ -42,3 +42,6 @@ The bot responds to the following commands in the Twitch chat:
 - `!schedule`: Displays the full schedule of events.
 - `!remindme <event>`: Sets a reminder for a specific event.
 - `!info`: Provides information about the event, participants, and other details.
+- `!countdown`: Displays the time remaining until the next event.
+- `!highlights`: Displays highlights or key moments from previous events.
+- `!feedback`: Allows viewers to provide feedback or suggestions for the event.
