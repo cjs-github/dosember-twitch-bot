@@ -16,7 +16,7 @@ Dosember is an annual streaming event promoting DOS games. This bot helps in pro
 
 2. Install dependencies:
    ```
-   npm install
+   pip install -r requirements.txt
    ```
 
 3. Configure the bot:
@@ -31,7 +31,7 @@ Dosember is an annual streaming event promoting DOS games. This bot helps in pro
 
 4. Run the bot:
    ```
-   npm start
+   python bot.py
    ```
 
 ## Usage Instructions
@@ -45,3 +45,4 @@ The bot responds to the following commands in the Twitch chat:
 - `!countdown`: Displays the time remaining until the next event.
 - `!highlights`: Displays highlights or key moments from previous events.
 - `!feedback`: Allows viewers to provide feedback or suggestions for the event.
+- `/dosember`: Joins the channel and starts monitoring it.

@@ -26,8 +26,13 @@ class DosemberBot(commands.Bot):
 
     async def event_message(self, message):
         await self.handle_commands(message)
+        if message.content.strip().lower() == '/dosember':
+            await self.join_channel_command(message.channel)
 
     async def join_channel(self, channel):
+        if channel in self.connected_channels:
+            self.logger.info(f'Already in channel: {channel}')
+            return
         for attempt in range(self.retry_attempts):
             try:
                 await self.join_channels([channel])
@@ -37,6 +42,10 @@ class DosemberBot(commands.Bot):
                 self.logger.error(f'Failed to join channel {channel}: {e}')
                 time.sleep(5)
         self.logger.error(f'Could not join channel {channel} after {self.retry_attempts} attempts')
+
+    async def join_channel_command(self, channel):
+        await self.join_channel(channel)
+        await channel.send('Dosember bot has joined the channel!')
 
     async def periodic_event_check(self):
         while True:
