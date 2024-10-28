@@ -1,2 +1,1 @@
-# dosember-twitch-bot
-A Twitch bot for promoting the Dosember event
+This repository is empty. Any task executed on it should be considered a new capability and needs to be created.
